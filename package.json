@@ -8,6 +8,10 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajsingh-19/Quiz-Hub-BackEnd.git"
+  },
   "author": "Raj Singh",
   "license": "ISC",
   "dependencies": {
