@@ -6,12 +6,18 @@ const optionSchema = new Schema({
     isCorrect: { type: Boolean, required: true }
 });
 
+const subQuizSchema = new Schema({
+    difficulty: { type: String, required: true },
+    question: { type: String, required: true },
+    options: [optionSchema]
+}) 
+
 const quizSchema = new Schema({
     category: { type: String, required: true },
     subject: { type: String, required: true },
-    difficulty: { type: String, required: true },
-    question: { type: String, required: true },
-    options: [optionSchema] 
+    image: { type: String, required: true },
+    description: { type: String, required: true },
+    quiz: [subQuizSchema],
 });
 
 const quizzes = mongoose.model("quizzes", quizSchema);

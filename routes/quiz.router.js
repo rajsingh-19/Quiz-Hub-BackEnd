@@ -1,13 +1,9 @@
+const express = require("express");
+const quizRouter = express.Router();
 const quizController = require("../controller/quizController");
+const verifyuser = require("../middleware/verifyuser");
 
-const quiz = {
-    quizRoutes : (app) => {
-        app.get("/quiz", quizController.getQuizData);
-        app.post("/createQuiz", quizController.postQuizData);
-        app.put("/updateQuiz", quizController.updateQuizData);
-        app.patch("/updateQuiz", quizController.updateQuizDataById);
-        app.delete("/deleteQuiz", quizController.deleteQuizDataById);
-    }
-}
+quizRouter.route("/")
+    .get(verifyuser, quizController.getQuizData)
 
-module.exports = quiz;
+module.exports = quizRouter;

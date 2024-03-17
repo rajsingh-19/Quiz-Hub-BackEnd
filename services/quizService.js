@@ -5,33 +5,15 @@ const quizService = {
         return quizzes.find({});
     },
     createQuiz: (requestBody) => {
-        const { category, subject, difficulty, question, options, option, isCorrect } = requestBody;
+        const { category, subject, image, description, quiz } = requestBody;
         const newQuizQuestion = new quizzes({
             category,
             subject,
-            difficulty,
-            question,
-            options,
-            option,
-            isCorrect
+            image,
+            description,
+            quiz
         });
         return newQuizQuestion.save();
-    },
-    updateQuiz: (requestBody) => {
-        const { _id, category, subject, difficulty, question, options, option, isCorrect } = requestBody;
-        return quizzes.findByIdAndUpdate(_id,
-            {$set: {category: category, subject: subject, difficulty: difficulty, question: question, options: options, option: option, isCorrect:isCorrect }},
-        { new: true });
-    },
-    updateQuizById: (requestBody) => {
-        const { _id, category, subject, difficulty, question, options, option, isCorrect } = requestBody;
-        return quizzes.findByIdAndUpdate(_id,
-            {$set: {category: category, subject: subject, difficulty: difficulty, question: question, options: options, option: option, isCorrect:isCorrect }},
-        { new: true });
-    },
-    deleteQuizById: (requestBody) => {
-        const { _id } = requestBody;
-        return quizzes.findByIdAndDelete(requestBody);
     }
 }
 
