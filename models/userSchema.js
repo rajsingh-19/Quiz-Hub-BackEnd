@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+//          defining the schema for creating the users
 const userSchema =  new Schema (
     {
         userName: { type: String, required: true },

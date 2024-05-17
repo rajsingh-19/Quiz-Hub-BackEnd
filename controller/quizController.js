@@ -1,9 +1,11 @@
 const quizService = require("../services/quizService");
 
 const quizController = {
+//          getting the quiz data after authentication
     getQuizData: (req, res, next) => {
         quizService
         .getQuiz()
+//          then catch as per the response succeeded or not
         .then((response) => {
             res.status(200).json(response);
         })
@@ -13,6 +15,8 @@ const quizController = {
             })
         }) 
     },
+//          for importing the quiz from the backend 
+/*
     postQuizData: (req, res, next) => {
         quizService
         .createQuiz(req.body)
@@ -25,6 +29,7 @@ const quizController = {
             })
         })
     }
+*/
 }
 
 module.exports = quizController;
