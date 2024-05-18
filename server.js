@@ -31,10 +31,10 @@ app.get("/", (req, res) => {
 });
 
 //          routes and routes with middleware
-app.use("/api/quiz", quizRouter);
-app.use("/api/categoryQuiz", categoryRouter);
+app.use("/quiz", quizRouter);
+app.use("/categoryQuiz", categoryRouter);
 // app.use("/api/createQuiz", quizImportRouter);
-app.use("/api/auth", authRouter);
+app.use("/auth", authRouter);
 app.use(routeNotFound);
 
 //          Database connection with Server
